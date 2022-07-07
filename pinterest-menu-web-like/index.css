@@ -1,0 +1,143 @@
+*,
+::before,
+::after {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+body {
+  overflow: hidden;
+  overflow-y: auto;
+  width: 100vw;
+  height: 100vh;
+  background-color: #ffffff;
+}
+
+header {
+  position: sticky;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  top: 0;
+  height: 100px;
+  width: 100%;
+  background-color: aliceblue;
+}
+
+main {
+  padding: 30px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+footer {
+  position: absolute;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  bottom: 0;
+  height: 100px;
+  width: 100%;
+  background-color: aliceblue;
+}
+
+.cool-menu {
+  position: fixed;
+  bottom: 100px;
+  right: 10px;
+}
+
+.touch-menu {
+  position: relative;
+  width: 0;
+  height: 0;
+  background-color: transparent;
+}
+
+.touch-menu::before {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  font-family: 'Material Icons';
+  width: 50px;
+  height: 50px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 40px;
+  border-radius: 50%;
+  color: #2f2f2f;
+  background-color: #e9c2f5;
+  cursor: pointer;
+  z-index: 1;
+  content: '\e5d2';
+}
+
+.touch-menu-item {
+  transition: all 1.2s;
+  transform-origin: bottom right;
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  background-color: transparent;
+  width: 50px;
+  height: 50px;
+  opacity: 0;
+  visibility: hidden;
+}
+
+.touch-menu-item::before {
+  position: absolute;
+  top: 10px;
+  left: 0px;
+  font-family: 'Material Icons';
+  width: 50px;
+  height: 50px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 40px;
+  border-radius: 50%;
+  color: #2f2f2f;
+  background-color: #e9c2f5;
+  cursor: pointer;
+  z-index: 1;
+}
+
+.touch-menu-item.is-selected {
+  height: 170px;
+}
+
+.touch-menu-item:nth-child(1).is-active {
+  transform: rotate(-0deg);
+}
+.touch-menu-item:nth-child(2).is-active {
+  transform: rotate(-22.5deg);
+}
+.touch-menu-item:nth-child(3).is-active {
+  transform: rotate(-45deg);
+}
+.touch-menu-item:nth-child(4).is-active {
+  transform: rotate(-67.5deg);
+}
+
+.touch-menu-item:nth-child(1)::before {
+  content: '\f10d';
+}
+.touch-menu-item:nth-child(2)::before {
+  content: '\e55b';
+}
+.touch-menu-item:nth-child(3)::before {
+  content: '\e87d';
+}
+.touch-menu-item:nth-child(4)::before {
+  content: '\e80d';
+}
+
+.touch-menu-item.is-active {
+  opacity: 1;
+  visibility: visible;
+  height: 150px;
+}
